@@ -1,2 +1,2 @@
-# Disenio-Consultor
-Pantallas para el proyecto de consultorias
+# Patrones de diseño
+Creacion
