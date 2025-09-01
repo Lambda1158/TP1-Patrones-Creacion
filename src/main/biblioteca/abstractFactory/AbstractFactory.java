@@ -1,15 +1,4 @@
 package biblioteca.abstractfactory;
-
-public interface InterfazUI {
-    void render();
-    String getTipo();
-}
-
-public interface MetodoEnvio {
-    void enviarNotificacion(String mensaje);
-    String getTipo();
-}
-
 class AdminUI implements InterfazUI {
     @Override
     public void render() {
@@ -58,12 +47,12 @@ class EnvioExpress implements MetodoEnvio {
     }
 }
 
-interface AbstractFactory {
+public interface Abstractfactory {
     InterfazUI crearInterfaz();
     MetodoEnvio crearMetodoEnvio();
 }
 
-class AdminFactory implements AbstractFactory {
+class AdminFactory implements Abstractfactory {
     @Override
     public InterfazUI crearInterfaz() {
         return new AdminUI();
@@ -75,7 +64,7 @@ class AdminFactory implements AbstractFactory {
     }
 }
 
-class UsuarioFactory implements AbstractFactory {
+class UsuarioFactory implements Abstractfactory {
     @Override
     public InterfazUI crearInterfaz() {
         return new UsuarioUI();
@@ -87,15 +76,3 @@ class UsuarioFactory implements AbstractFactory {
     }
 }
 
-class FabricaProvider {
-    public static AbstractFactory getFactory(String tipoUsuario) {
-        switch (tipoUsuario.toLowerCase()) {
-            case "admin":
-                return new AdminFactory();
-            case "usuario":
-                return new UsuarioFactory();
-            default:
-                throw new IllegalArgumentException("Tipo de usuario no válido");
-        }
-    }
-}

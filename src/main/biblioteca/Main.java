@@ -26,8 +26,8 @@ public class Main {
         
         // 3. Abstract Factory
         System.out.println("\n3. ABSTRACT FACTORY");
-        AbstractFactory adminFactory = FabricaProvider.getFactory("admin");
-        AbstractFactory userFactory = FabricaProvider.getFactory("usuario");
+        Abstractfactory adminFactory = FabricaProvider.getFactory("admin");
+        Abstractfactory userFactory = FabricaProvider.getFactory("usuario");
         
         InterfazUI adminUI = adminFactory.crearInterfaz();
         MetodoEnvio adminEnvio = adminFactory.crearMetodoEnvio();

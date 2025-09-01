@@ -49,26 +49,4 @@ public class Prestamo implements Cloneable {
     }
 }
 
-// Clases auxiliares para el prototype
-class Libro {
-    private String titulo;
-    private String autor;
-    
-    public Libro(String titulo, String autor) {
-        this.titulo = titulo;
-        this.autor = autor;
-    }
-    
-    public String getTitulo() { return titulo; }
-    public String getAutor() { return autor; }
-}
 
-class Usuario {
-    private String nombre;
-    
-    public Usuario(String nombre) {
-        this.nombre = nombre;
-    }
-    
-    public String getNombre() { return nombre; }
-}
